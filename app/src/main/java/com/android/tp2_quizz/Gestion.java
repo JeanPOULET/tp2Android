@@ -20,6 +20,8 @@ public class Gestion extends AppCompatActivity {
         setContentView(R.layout.activity_gestion);
         quizz = new Quizz();
         layoutManager = new LinearLayoutManager(this);
-        vueQuizz.setLayoutManager(layoutManager);adapter = new MyAdapter(this, quizz.getQuestions());vueQuizz.setAdapter(adapter);
+        vueQuizz.setLayoutManager(layoutManager);
+        adapter = new MyAdapter(this, quizz.getQuestions());
+        vueQuizz.setAdapter(adapter);
     }
 }

@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean reponseLu = false;
     int index = 0;
     int nbJustes = 0;
-    private static final int CODE_UNEAUTREACTIVITE = 1;
+    private static final int CODE_SECOND = 1;
+    private static final int CODE_GESTION = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public void voirReponse(View v) {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra("Value", quizz.getReponses().get(index));
-        startActivityForResult(intent, CODE_UNEAUTREACTIVITE);
+        startActivityForResult(intent, CODE_SECOND);
 
     }
 
@@ -89,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         reponseLu = true;
+    }
+
+    public void gestion(View v){
+        Intent intent = new Intent(MainActivity.this, Gestion.class);
+        startActivityForResult(intent, CODE_GESTION);
     }
 
 }
