@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">quizz</string>
+    <string name="_true">VRAI</string>
+    <string name="_false">FAUX</string>
+    <string name="_next">NEXT</string>
+    <string name="incorrect">Incorrect!</string>
+    <string name="voirResp">VOIR RÉPONSE</string>
+    <string name="sur">Êtes vous sûr de vouloir le faire ?</string>
+    <string name="montrez">MONTREZ LA réponse !</string>
+    <string name="gestion">gestion</string>
+</resources>
