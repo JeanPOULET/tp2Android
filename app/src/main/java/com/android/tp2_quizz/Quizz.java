@@ -16,8 +16,8 @@ public class Quizz {
     private String[] qs = {tasmanie, sauterelle, pandas, dromadaire, papillon, gorille};
 
 
-    private List<String> questions;
-    private List<Boolean> reponses;
+    private static List<String> questions;
+    private static List<Boolean> reponses;
 
     public Quizz() {
         questions = new ArrayList<>();
@@ -40,11 +40,23 @@ public class Quizz {
         questions.add(question);
     }
 
+    public void addQuestion(int index, String question) {
+        questions.add(question);
+    }
+
     public void addReponse(String reponse){
         if(reponse.equalsIgnoreCase("true") || reponse.equalsIgnoreCase("vrai")){
             reponses.add(true);
         }else{
             reponses.add(false);
+        }
+    }
+
+    public void addReponse(int index, String reponse){
+        if(reponse.equalsIgnoreCase("true") || reponse.equalsIgnoreCase("vrai")){
+            reponses.add(index,true);
+        }else{
+            reponses.add(index,false);
         }
     }
 

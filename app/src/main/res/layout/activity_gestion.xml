@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/vue_questions"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-94dp" />
+        android:layout_height="471dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonAddQuestion"
+        android:layout_width="41dp"
+        android:layout_height="39dp"
+        android:clickable="true"
+        android:onClick="addQuestion"
+        android:visibility="visible"
+        app:backgroundTintMode="add"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <EditText
+        android:id="@+id/editTextQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextReponse"
+        android:text="Reponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </EditText>
+
+</LinearLayout>
+
+
+
+

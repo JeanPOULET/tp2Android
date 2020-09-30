@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void gestion(View v){
         Intent intent = new Intent(MainActivity.this, Gestion.class);
-        startActivityForResult(intent, CODE_GESTION);
+        startActivity(intent);
     }
 
 }

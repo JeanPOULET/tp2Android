@@ -7,49 +7,48 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private List<String> values;
+    private List<String> questions;
+    private List<Boolean> reponses;
     Context ctx;
 
-    public MyAdapter(Context context, List<String> myDataset) {
-        values = myDataset;
+    public MyAdapter(Context context, List<String> qs, List<Boolean> rs) {
+        this.questions = qs;
+        this.reponses = rs;
         ctx = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView texte;
+        public TextView question;
+        public TextView reponse;
 
         public ViewHolder(View v) {
             super(v);
-            texte = v.findViewById(R.id.affichage);
+            question = v.findViewById(R.id.textViewQuestion);
+            reponse = v.findViewById(R.id.textViewReponse);
         }
     }
 
-
-    @NonNull
-    @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.item_quizz, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
-
-    @Override
-    public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
-        final String name = values.get(position);
-        holder.texte.setText(name);
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+        final String name = questions.get(position);
+        final String rep = reponses.get(position).toString();
+        holder.question.setText(name);
+        holder.reponse.setText(rep);
     }
 
-    @Override
     public int getItemCount() {
-        return 0;
+        return questions.size();
     }
 }
